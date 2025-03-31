@@ -4,11 +4,9 @@ import os
 TASK_FILE = ".tasks.txt"
 
 def add_task(task):
-    """Function: add_task
-    
-    Input - a task to add to the list
-    Return - nothing
-    """
+    with open(".temp_test.txt", "a", encoding="utf-8") as file:
+        file.write(task + "\n")
+    file.close()
     
 def list_tasks():
     with open(TASK_FILE, 'r', encoding="utf-8") as file:
