@@ -9,14 +9,20 @@ def add_task(task):
     Input - a task to add to the list
     Return - nothing
     """
-
+    
 def list_tasks():
-    return
-
+    with open(TASK_FILE, 'r', encoding="utf-8") as file:
+        tasks = file.readlines()
+        counter = 1
+        output_string =""
+        for task in tasks:
+            output_string = output_string + str(counter) + ". "+task
+            counter = counter + 1
+        return output_string.rstrip()
 
 def remove_task(index):
     return
-
+    
 def main():
     parser = argparse.ArgumentParser(description="Command-line Todo List")
     parser.add_argument(
